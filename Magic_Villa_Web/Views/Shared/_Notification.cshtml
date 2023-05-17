@@ -1,0 +1,33 @@
+﻿
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+@if (TempData["success"] != null)
+{
+    <script type="text/javascript">
+        let timerInterval
+        Swal.fire({
+            title: '@TempData["success"]',
+            timer: 2000,
+            showConfirmButton: false,
+            icon: 'success',
+            willClose: () => {
+                clearInterval(timerInterval)
+            }
+        })
+        </script>
+}
+@if (TempData["error"] != null)
+{
+    <script type="text/javascript">
+        let timerInterval
+        Swal.fire({
+            title: '@TempData["error"]',
+            timer: 2000,
+            showConfirmButton: false,
+            icon: 'success',
+            willClose: () => {
+                clearInterval(timerInterval)
+            }
+        })
+    </script>
+
+}
